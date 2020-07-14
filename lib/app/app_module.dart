@@ -1,5 +1,7 @@
+import 'package:cadernovirtual_mobile/app/modules/annotations/annotations_module.dart';
 import 'package:cadernovirtual_mobile/app/modules/login/login_module.dart';
 import 'package:cadernovirtual_mobile/app/modules/signup/signup_module.dart';
+import 'package:cadernovirtual_mobile/app/modules/user/user_module.dart';
 
 import 'app_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -18,6 +20,8 @@ class AppModule extends MainModule {
     Router(Modular.initialRoute, module: HomeModule()),
     Router('/signup', module: SignupModule()),
     Router('/auth', module: LoginModule()),
+    Router('/annotations', module: AnnotationsModule()),
+    Router('/user', module: UserModule()),
   ];
 
   @override

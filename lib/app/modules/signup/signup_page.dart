@@ -25,41 +25,11 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
           },
           child: Icon(Icons.keyboard_backspace),
         ),
-        actions: <Widget>[
-          Container(
-                margin: EdgeInsets.all(16),
-                child: FlatButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/auth');
-                  },
-                  child: Text(
-                    'Login',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.blue[600],
-                    ),
-                  ),
-                ),
-              ),
-        ],
       ),
       body: ListView(
         children: <Widget>[
-          Container(
-            height: 450,
-            decoration: BoxDecoration(
-                boxShadow: [
-                  new BoxShadow(
-                    color: Colors.black26,
-                    offset: new Offset(0.0, 2.0),
-                    blurRadius: 25.0,
-                  )
-                ],
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(32),
-                    bottomRight: Radius.circular(32))),
-            alignment: Alignment.topCenter,
+          Align(
+            alignment: Alignment.bottomCenter,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,6 +59,7 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
                     textCapitalization: TextCapitalization.words,
                     decoration: InputDecoration(
                       hintText: 'Nome',
+                      icon: Icon(Icons.contacts),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide: BorderSide(color: Colors.grey)),
@@ -105,6 +76,7 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
                     keyboardType: TextInputType.emailAddress,
                     style: TextStyle(fontSize: 18),
                     decoration: InputDecoration(
+                      icon: Icon(Icons.contact_mail),
                       hintText: 'E-mail',
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -124,6 +96,26 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       hintText: 'Senha',
+                      icon: Icon(Icons.vpn_key),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide(color: Colors.grey)),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide(color: Colors.grey)),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      EdgeInsets.only(left: 20, right: 20, top: 8, bottom: 8),
+                  child: TextField(
+                    obscureText: true,
+                    style: TextStyle(fontSize: 18),
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      hintText: 'Confirme a senha',
+                      icon: Icon(Icons.vpn_key),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide: BorderSide(color: Colors.grey)),
@@ -145,9 +137,16 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
                     width: 250,
                     child: FlatButton(
                       child: Text('Criar Conta',
-                          style: TextStyle(fontSize: 20, color: Colors.white)),
+                      style: TextStyle(fontSize: 20, color: Colors.white)),
                       onPressed: () {
-                        Navigator.pushNamed(context, '/auth');
+                        Navigator.pushNamed(context, '/annotations');
+                        showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            title: Text('Seja vem vindo ao Caderno Virtual!'),
+                            content: Text('Usuário registrado.'),
+                          ),
+                        );
                       },
                     ),
                   ),

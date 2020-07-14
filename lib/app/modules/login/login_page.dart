@@ -67,6 +67,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                       EdgeInsets.only(left: 20, right: 20, top: 8, bottom: 8),
                   child: TextField(
                     keyboardType: TextInputType.emailAddress,
+                    obscureText: true,
                     style: TextStyle(fontSize: 18),
                     decoration: InputDecoration(
                       hintText: 'Senha',
@@ -91,7 +92,7 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                     child: Text('Entrar',
                         style: TextStyle(fontSize: 20, color: Colors.white)),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/auth');
+                      Navigator.pushNamed(context, '/annotations');
                     },
                   ),
                 ),
