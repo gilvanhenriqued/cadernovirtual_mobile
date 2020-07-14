@@ -32,8 +32,8 @@ class _AnnotationsPageState
       appBar: _buildAppBar(),
       bottomNavigationBar: BottomNavigationBar(
         elevation: 5,
-        selectedItemColor: Colors.blue[900],
-        unselectedItemColor: Colors.blue[600],
+        selectedItemColor: Colors.blue[600],
+        unselectedItemColor: Colors.black54,
         type: BottomNavigationBarType.shifting,
         currentIndex: _index,
         onTap: (index) {
@@ -44,7 +44,7 @@ class _AnnotationsPageState
         items: [
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.note,
+                Icons.format_list_bulleted,
               ),
               title: Text('Anotações Públicas', style: TextStyle())),
           BottomNavigationBarItem(
