@@ -1,3 +1,6 @@
+import 'package:cadernovirtual_mobile/app/modules/login/login_module.dart';
+import 'package:cadernovirtual_mobile/app/modules/signup/signup_module.dart';
+
 import 'app_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
@@ -12,8 +15,10 @@ class AppModule extends MainModule {
 
   @override
   List<Router> get routers => [
-        Router(Modular.initialRoute, module: HomeModule()),
-      ];
+    Router(Modular.initialRoute, module: HomeModule()),
+    Router('/signup', module: SignupModule()),
+    Router('/auth', module: LoginModule()),
+  ];
 
   @override
   Widget get bootstrap => AppWidget();
